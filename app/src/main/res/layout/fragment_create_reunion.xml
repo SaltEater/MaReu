@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/colorPrimaryDark">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reunion_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="32"
+        app:errorEnabled="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reunion_name_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_create_light_gray_24dp"
+            android:hint=" Nom de la Réunion"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_choose_time"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:errorEnabled="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/salle_spinner"
+        app:layout_constraintTop_toBottomOf="@+id/reunion_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_choose_time_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:drawableStart="@drawable/ic_date_range_light_gray_24dp"
+            android:focusable="false"
+            android:hint=" Date de la réunion"
+            android:inputType="date" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/salle_spinner"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toBottomOf="@+id/et_choose_time"
+        app:layout_constraintLeft_toRightOf="@+id/et_choose_time"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_choose_time">
+
+    </androidx.appcompat.widget.AppCompatSpinner>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/participants_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:clickable="true"
+        android:focusable="false"
+        app:counterEnabled="true"
+        app:counterMaxLength="64"
+        app:errorEnabled="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_choose_time">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/participants_list_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_person_light_gray_24dp"
+            android:hint=" Participants"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/add_reunion_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Ajouter la Réunion"
+        app:layout_constraintTop_toBottomOf="@+id/participants_list">
+
+    </Button>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
